@@ -113,6 +113,26 @@ namespace projLeds1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap led_aceso {
+            get {
+                object obj = ResourceManager.GetObject("led_aceso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap led_apagado {
+            get {
+                object obj = ResourceManager.GetObject("led_apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo2Yellow {
             get {
                 object obj = ResourceManager.GetObject("logo2Yellow", resourceCulture);
@@ -146,26 +166,6 @@ namespace projLeds1.Properties {
         internal static System.Drawing.Bitmap usedefault {
             get {
                 object obj = ResourceManager.GetObject("usedefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2025_10_19_at_10_14_03 {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2025-10-19 at 10.14.03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2025_10_19_at_10_14_03__1_ {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2025-10-19 at 10.14.03 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

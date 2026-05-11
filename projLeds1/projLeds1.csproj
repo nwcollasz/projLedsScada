@@ -103,10 +103,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2025-10-19 at 10.14.03.jpeg" />
+    <None Include="Resources\led_apagado.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2025-10-19 at 10.14.03 %281%29.jpeg" />
+    <None Include="Resources\led_aceso.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lampadas_led.png" />

@@ -380,7 +380,7 @@ namespace projLeds1
             // pictureBox8
             // 
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox8.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox8.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox8.Location = new System.Drawing.Point(659, 321);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox8.Name = "pictureBox8";
@@ -392,7 +392,7 @@ namespace projLeds1
             // pictureBox7
             // 
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox7.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox7.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox7.Location = new System.Drawing.Point(565, 321);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox7.Name = "pictureBox7";
@@ -404,7 +404,7 @@ namespace projLeds1
             // pictureBox6
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox6.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox6.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox6.Location = new System.Drawing.Point(470, 321);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox6.Name = "pictureBox6";
@@ -416,7 +416,7 @@ namespace projLeds1
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox5.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox5.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox5.Location = new System.Drawing.Point(376, 321);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox5.Name = "pictureBox5";
@@ -428,7 +428,7 @@ namespace projLeds1
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox4.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox4.Location = new System.Drawing.Point(658, 212);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox4.Name = "pictureBox4";
@@ -440,7 +440,7 @@ namespace projLeds1
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox3.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox3.Location = new System.Drawing.Point(563, 212);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox3.Name = "pictureBox3";
@@ -452,7 +452,7 @@ namespace projLeds1
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox2.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox2.Location = new System.Drawing.Point(468, 212);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
@@ -464,7 +464,7 @@ namespace projLeds1
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::projLeds1.Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+            this.pictureBox1.Image = global::projLeds1.Properties.Resources.led_apagado;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(375, 212);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

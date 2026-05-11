@@ -237,8 +237,8 @@ namespace projLeds1
                 if (imagens[i] != null)
                 {
                     imagens[i].Image = estado
-                        ? Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03__1_
-                        : Properties.Resources.WhatsApp_Image_2025_10_19_at_10_14_03;
+                        ? Properties.Resources.led_aceso
+                        : Properties.Resources.led_apagado;
                 }
             }
         }
