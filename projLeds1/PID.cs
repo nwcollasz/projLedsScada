@@ -9,7 +9,7 @@ namespace projLeds1
     internal class PID
     {
         // CONTROLADOR PID SIMPLES
-        public class PIDController
+        public class PIDController 
         {
             // ganhos do controlador
             public double Kp { get; set; }

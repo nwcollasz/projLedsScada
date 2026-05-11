@@ -133,12 +133,6 @@
   <data name="lonepfp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lonepfp.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eueueu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eueueu.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kayako saeki" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kayako saeki.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="WhatsApp Image 2025-10-19 at 10.14.03 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2025-10-19 at 10.14.03 (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

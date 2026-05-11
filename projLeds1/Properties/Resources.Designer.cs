@@ -93,29 +93,9 @@ namespace projLeds1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eueueu {
-            get {
-                object obj = ResourceManager.GetObject("eueueu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fundoindustria {
             get {
                 object obj = ResourceManager.GetObject("fundoindustria", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kayako_saeki {
-            get {
-                object obj = ResourceManager.GetObject("kayako saeki", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
