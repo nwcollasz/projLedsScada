@@ -1,6 +1,6 @@
 # 🔆 Controle de LEDs (WinForms)
 
-Projeto C# Windows Forms que simula um sistema de controle de LEDs com monitoramento de temperatura por gráfico e controlador PID.
+Projeto C# Windows Forms que simula um sistema de controle de LEDs com monitoramento de temperatura por gráfico e controlador PID, com ferramentas de exportação e armazenamento de dados.
 
 ---
 
