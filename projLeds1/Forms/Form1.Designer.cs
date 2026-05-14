@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace projLeds1
+namespace projLeds1.Forms
 {
     partial class ControleLeds
     {
@@ -75,12 +75,13 @@ namespace projLeds1
             this.lblTemp = new System.Windows.Forms.Label();
             this.btnExportarLog = new System.Windows.Forms.Button();
             this.btnHistorico = new System.Windows.Forms.Button();
-            this.listBoxHistorico = new System.Windows.Forms.ListBox();
             this.btnSQLite = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblFuncao = new System.Windows.Forms.Label();
             this.lblEntrada = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.timerFade = new System.Windows.Forms.Timer(this.components);
+            this.dgvHistorico = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -91,6 +92,7 @@ namespace projLeds1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_1
@@ -584,7 +586,7 @@ namespace projLeds1
             this.btnExportarLog.Location = new System.Drawing.Point(800, 14);
             this.btnExportarLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExportarLog.Name = "btnExportarLog";
-            this.btnExportarLog.Size = new System.Drawing.Size(181, 45);
+            this.btnExportarLog.Size = new System.Drawing.Size(240, 45);
             this.btnExportarLog.TabIndex = 38;
             this.btnExportarLog.Text = "Imprimir LOG";
             this.btnExportarLog.UseVisualStyleBackColor = false;
@@ -595,32 +597,21 @@ namespace projLeds1
             this.btnHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnHistorico.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorico.Location = new System.Drawing.Point(800, 209);
+            this.btnHistorico.Location = new System.Drawing.Point(800, 278);
             this.btnHistorico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(111, 31);
+            this.btnHistorico.Size = new System.Drawing.Size(114, 31);
             this.btnHistorico.TabIndex = 40;
             this.btnHistorico.Text = "Salvar Excel";
             this.btnHistorico.UseVisualStyleBackColor = false;
             this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
-            // 
-            // listBoxHistorico
-            // 
-            this.listBoxHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.listBoxHistorico.FormattingEnabled = true;
-            this.listBoxHistorico.ItemHeight = 15;
-            this.listBoxHistorico.Location = new System.Drawing.Point(800, 78);
-            this.listBoxHistorico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.listBoxHistorico.Name = "listBoxHistorico";
-            this.listBoxHistorico.Size = new System.Drawing.Size(248, 109);
-            this.listBoxHistorico.TabIndex = 39;
             // 
             // btnSQLite
             // 
             this.btnSQLite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnSQLite.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSQLite.ForeColor = System.Drawing.Color.Black;
-            this.btnSQLite.Location = new System.Drawing.Point(918, 209);
+            this.btnSQLite.Location = new System.Drawing.Point(926, 278);
             this.btnSQLite.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSQLite.Name = "btnSQLite";
             this.btnSQLite.Size = new System.Drawing.Size(114, 31);
@@ -680,6 +671,20 @@ namespace projLeds1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // timerFade
+            // 
+            this.timerFade.Enabled = true;
+            this.timerFade.Interval = 30;
+            this.timerFade.Tick += new System.EventHandler(this.timerFade_Tick);
+            // 
+            // dgvHistorico
+            // 
+            this.dgvHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorico.Location = new System.Drawing.Point(800, 82);
+            this.dgvHistorico.Name = "dgvHistorico";
+            this.dgvHistorico.Size = new System.Drawing.Size(240, 190);
+            this.dgvHistorico.TabIndex = 46;
+            // 
             // ControleLeds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -688,12 +693,12 @@ namespace projLeds1
             this.BackgroundImage = global::projLeds1.Properties.Resources.black_and_yellow2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1070, 577);
+            this.Controls.Add(this.dgvHistorico);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEntrada);
             this.Controls.Add(this.lblFuncao);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnSQLite);
-            this.Controls.Add(this.listBoxHistorico);
             this.Controls.Add(this.btnHistorico);
             this.Controls.Add(this.btnExportarLog);
             this.Controls.Add(this.lblTemp);
@@ -748,6 +753,7 @@ namespace projLeds1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -853,12 +859,13 @@ namespace projLeds1
         private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Button btnExportarLog;
         private System.Windows.Forms.Button btnHistorico;
-        private System.Windows.Forms.ListBox listBoxHistorico;
         private System.Windows.Forms.Button btnSQLite;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblFuncao;
         private System.Windows.Forms.Label lblEntrada;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timerFade;
+        private System.Windows.Forms.DataGridView dgvHistorico;
     }
 }
 

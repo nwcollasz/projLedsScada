@@ -1,4 +1,4 @@
-﻿namespace projLeds1
+﻿namespace projLeds1.Forms
 {
     partial class LoginForms
     {
@@ -119,7 +119,7 @@
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblHora.Location = new System.Drawing.Point(12, 400);
+            this.lblHora.Location = new System.Drawing.Point(9, 392);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(147, 39);
             this.lblHora.TabIndex = 7;

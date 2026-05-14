@@ -1,5 +1,6 @@
 ﻿using System;
-namespace projLeds1
+
+namespace projLeds1.Models
 {
     public class Usuario
     {

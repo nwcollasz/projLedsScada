@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace projLeds1
+namespace projLeds1.Forms
 {
     internal static class Program
     {

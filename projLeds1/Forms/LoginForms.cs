@@ -1,7 +1,9 @@
-﻿using System; 
+﻿using System;
 using System.Windows.Forms;
 
-namespace projLeds1
+using projLeds1.Models;
+
+namespace projLeds1.Forms
 {
     public partial class LoginForms : Form
     {
@@ -27,7 +29,7 @@ namespace projLeds1
             nome = nome.ToLower();
 
             if (nome == "nicollas")
-                return "adm";
+                return "adm123";
 
             if (nome.Length < 3)
             {
