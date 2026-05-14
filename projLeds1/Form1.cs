@@ -251,7 +251,16 @@ namespace projLeds1
         {
             int ativos = GetAtivos();
 
-            if (ativos > 4)
+
+            if (ativos == 0)
+            {
+                temperatura -= 0.8;
+            }
+            else if (ativos <= 3)
+            {
+                temperatura += ativos * 0.2;
+            }
+            else if (ativos <= 6)
             {
                 temperatura += (ativos * 0.4);
             }
