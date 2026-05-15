@@ -87,7 +87,8 @@ namespace projLeds1.Forms
                 else
                     u.Funcao = "Funcionário";
 
-                ControleLeds tela = new ControleLeds(u);
+                Dashboard tela = new Dashboard(u);
+
                 tela.Show();
 
                 this.Hide();
@@ -140,6 +141,7 @@ namespace projLeds1.Forms
         // IMPEDE FECHAMENTO PELO "X" E "ALT + F4"
         // FORÇA O USO DO BOTÃO "SAIR" PARA FECHAR O SISTEMA 
         //=============================================================
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -164,6 +166,5 @@ namespace projLeds1.Forms
             Application.Exit();
         }
 
-       
     }
 }

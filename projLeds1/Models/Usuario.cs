@@ -9,6 +9,5 @@ namespace projLeds1.Models
         public DateTime Entrada { get; set; }
         public System.Drawing.Image Foto { get; set; }
 
-
     }
 }

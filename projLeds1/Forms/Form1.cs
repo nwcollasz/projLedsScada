@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -7,6 +6,7 @@ using projLeds1.Models;
 using projLeds1.Services;
 using projLeds1.UI;
 using projLeds1.Database;
+using projLeds1.Core;
 
 namespace projLeds1.Forms
 {
@@ -28,6 +28,7 @@ namespace projLeds1.Forms
         private GraficoSCADA grafico;
         private Button[] botoes;
         private PictureBox[] imagens;
+        private Dashboard dashboard;
 
 
         //====================================================
@@ -46,13 +47,16 @@ namespace projLeds1.Forms
             UpdateStyles();
         }
        
-        public ControleLeds(Usuario u) : this() 
+        public ControleLeds(Usuario u, Dashboard dash) : this() 
         {
             usuario = u;
+            dashboard = dash;
         }
 
         private void ControleLeds_Load(object sender, EventArgs e)
         {
+            timer1.Enabled = true;
+
             if (IsDesignTime()) return;
 
             Inicializar();
@@ -64,15 +68,12 @@ namespace projLeds1.Forms
 
             timer1.Start();
 
-            this.Opacity = 0;
-            timerFade.Start();
-
             if (usuario != null)
             {
                 lblNome.Text = $" User: {usuario.Nome}";
                 lblEntrada.Text = $"Entrada: {usuario.Entrada:dd/MM/yyyy HH:mm:ss}";
                 lblFuncao.Text = $" Função: {usuario.Funcao}";
-                pictureBoxUsuario.Image = usuario.Foto;
+                pictureBoxUsuario.Image = usuario.Foto; 
             }
         }
 
@@ -185,21 +186,21 @@ namespace projLeds1.Forms
         private void timer1_Tick(object sender, EventArgs e)
         {
             int ativos = ledService.GetAtivos();
+
             simulador.Atualizar(ativos);
 
-            grafico.Atualizar(ativos, simulador.Temperatura);
+            grafico.Atualizar(ativos,simulador.Temperatura);
+
+            SistemaGlobal.TemperaturaLEDs = simulador.Temperatura;
+
+            SistemaGlobal.LEDsAtivos = ativos;
+
+            SistemaGlobal.StatusLEDs = ativos > 0
+                ? "ONLINE"
+                : "STANDBY";
 
             atualizaInterface();
         }
-
-        private void timerFade_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity < 1)
-                this.Opacity += 0.15;
-            else
-                timerFade.Stop();
-        }
-
 
         //====================================================
         // BOTÃO PARA EXPORTAR O HISTÓRICO PARA UM ARQUIVO CSV
@@ -228,7 +229,6 @@ namespace projLeds1.Forms
 
             gridHistorico.AdicionarRegistro(registro);
         }
-
 
         //====================================================================
         // BOTÃO PARA SALVAR O ÚLTIMO REGISTRO DO LOG NO BANCO DE DADOS SQLITE
@@ -272,11 +272,10 @@ namespace projLeds1.Forms
                 Application.StartupPath);
         }
 
-        //=============================================================
-        // MÉTODOS PARA IMPEDIR O FECHAMENTO DO FORMULÁRIO PELO USUÁRIO
+        //==================================================
         // IMPEDE FECHAMENTO PELO "X" E "ALT + F4"
         // FORÇA O USO DO BOTÃO "SAIR" PARA FECHAR O SISTEMA 
-        //=============================================================
+        //==================================================
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -284,6 +283,8 @@ namespace projLeds1.Forms
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
+                this.Hide();
+                dashboard.Show();
                 e.Cancel = true;
                 MessageBox.Show("Use o botão SAIR para fechar o sistema.");
             }
@@ -302,7 +303,12 @@ namespace projLeds1.Forms
             Application.Exit();
         }
 
-        
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            dashboard.Show();
+            dashboard.BringToFront();
+        }
     }
 
 }

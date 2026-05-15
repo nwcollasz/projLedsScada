@@ -22,6 +22,9 @@ namespace projLeds1.Services
             double temperatura,
             int ativos)
         {
+            if (temperatura > 200)
+             return Color.Purple;
+           
             if (temperatura > 100)
                 return Color.Red;
             
@@ -30,7 +33,7 @@ namespace projLeds1.Services
 
             if (ativos > 0)
                 return Color.Yellow;
-
+           
             return Color.Lime;
         }
     }

@@ -55,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\SistemaGlobal.cs" />
     <Compile Include="Services\AlarmeService.cs" />
     <Compile Include="DataBase\BancoHistorico.cs" />
     <Compile Include="Services\ExportacaoService.cs" />
@@ -85,6 +92,9 @@
     <Compile Include="Models\RegistroHistorico.cs" />
     <Compile Include="Services\SimuladorTemperatura.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <EmbeddedResource Include="Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
