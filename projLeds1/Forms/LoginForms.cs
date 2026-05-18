@@ -7,9 +7,6 @@ namespace projLeds1.Forms
 {
     public partial class LoginForms : Form
     {
-        //===============================================
-        // CONSTRUTOR, MÉTODOS DE EVENTO E OUTROS MÉTODOS
-        //===============================================
 
         public LoginForms()
         {
@@ -19,10 +16,6 @@ namespace projLeds1.Forms
             this.StartPosition = FormStartPosition.CenterScreen;
             this.AcceptButton = btnEntrar;
         }
-
-        //=======================================================
-        // MÉTODOS PARA GERAR SENHA E CONVERTER LETRA PARA NÚMERO
-        //=======================================================
 
         private string GerarSenha(string nome)
         {
@@ -59,10 +52,6 @@ namespace projLeds1.Forms
         {
             return (c - 'a') + 1;
         }
-
-        //======================================================
-        // EVENTOS DE CLIQUE, TIMER E OUTROS EVENTOS DE CONTROLE
-        //======================================================
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -103,10 +92,6 @@ namespace projLeds1.Forms
             }
         }
 
-        //===============================================
-        // EVENTOS DE TIMER PARA HORA E EFEITO DE FADE IN
-        //===============================================
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy  HH:mm:ss");
@@ -120,10 +105,6 @@ namespace projLeds1.Forms
                 timerFade.Stop();
         }
 
-        //===============================================
-        // EVENTOS DE TEXTO PARA MUDAR A IMAGEM DE PERFIL
-        //===============================================
-
         private void txtFuncionario_TextChanged(object sender, EventArgs e)
         {
             string nome =
@@ -135,12 +116,6 @@ namespace projLeds1.Forms
             else 
                 picturePerfil.Image = Properties.Resources.usedefault;
         }
-
-        //=============================================================
-        // MÉTODOS PARA IMPEDIR O FECHAMENTO DO FORMULÁRIO PELO USUÁRIO
-        // IMPEDE FECHAMENTO PELO "X" E "ALT + F4"
-        // FORÇA O USO DO BOTÃO "SAIR" PARA FECHAR O SISTEMA 
-        //=============================================================
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {

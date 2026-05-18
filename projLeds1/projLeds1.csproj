@@ -62,19 +62,31 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\SistemaGlobal.cs" />
+    <Compile Include="Forms\Front.cs" />
+    <Compile Include="Forms\MotorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MotorForm.Designer.cs">
+      <DependentUpon>MotorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LedStatus.cs" />
+    <Compile Include="Models\MotorStatus.cs" />
+    <Compile Include="UI\MotorUIService.cs" />
+    <Compile Include="Services\MotorLogService.cs" />
+    <Compile Include="Services\MotorService.cs" />
     <Compile Include="Services\AlarmeService.cs" />
     <Compile Include="DataBase\BancoHistorico.cs" />
-    <Compile Include="Services\ExportacaoService.cs" />
+    <Compile Include="Services\LedExportacaoService.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\GraficoSCADA.cs" />
-    <Compile Include="UI\GridHistorico.cs" />
+    <Compile Include="UI\LedGrafico.cs" />
+    <Compile Include="UI\LedGridHistorico.cs" />
     <Compile Include="Services\HistoricoService.cs" />
-    <Compile Include="Core\Leds.cs" />
+    <Compile Include="Core\NumeroLed.cs" />
     <Compile Include="Services\LedService.cs" />
     <Compile Include="Forms\LoginForms.cs">
       <SubType>Form</SubType>
@@ -92,6 +104,7 @@
     <Compile Include="Models\RegistroHistorico.cs" />
     <Compile Include="Services\SimuladorTemperatura.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="UI\MotorGridHistorico.cs" />
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForms.resx">
       <DependentUpon>LoginForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MotorForm.resx">
+      <DependentUpon>MotorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,7 +160,27 @@
   <ItemGroup>
     <None Include="Resources\logo2Yellow.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-database-export-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xls-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoSCADA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motorGiro2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motorGiro.gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giroMotor2_off.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

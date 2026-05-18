@@ -18,17 +18,17 @@ namespace projLeds1.Forms
         //====================
 
         private LedService ledService;
-        private HistoricoService historicoService;
-        private ExportacaoService exportacaoService;
+        private LedExportacaoService exportacaoService;
         private AlarmeService alarmeService;
         private Usuario usuario;
         private SimuladorTemperatura simulador;
         private BancoHistorico bancoHistorico;
-        private GridHistorico gridHistorico;
-        private GraficoSCADA grafico;
+        private LedGridHistorico gridHistorico;
+        private LedGrafico grafico;
         private Button[] botoes;
         private PictureBox[] imagens;
         private Dashboard dashboard;
+
 
 
         //====================================================
@@ -47,8 +47,9 @@ namespace projLeds1.Forms
             UpdateStyles();
         }
        
-        public ControleLeds(Usuario u, Dashboard dash) : this() 
+        public ControleLeds(LedService ledRecebido, Usuario u, Dashboard dash) : this() 
         {
+            this.ledService = ledRecebido;
             usuario = u;
             dashboard = dash;
         }
@@ -61,6 +62,8 @@ namespace projLeds1.Forms
 
             Inicializar();
 
+            this.BackColor = Color.FromArgb(35, 35, 35);
+
             timer1.Interval = 100;
 
             timer1.Tick -= timer1_Tick;
@@ -71,7 +74,7 @@ namespace projLeds1.Forms
             if (usuario != null)
             {
                 lblNome.Text = $" User: {usuario.Nome}";
-                lblEntrada.Text = $"Entrada: {usuario.Entrada:dd/MM/yyyy HH:mm:ss}";
+                lblEntrada.Text = $"{usuario.Entrada:dd/MM/yyyy HH:mm:ss}";
                 lblFuncao.Text = $" Função: {usuario.Funcao}";
                 pictureBoxUsuario.Image = usuario.Foto; 
             }
@@ -101,12 +104,11 @@ namespace projLeds1.Forms
 
             ledService = new LedService();
             simulador = new SimuladorTemperatura();
-            historicoService = new HistoricoService();
-            exportacaoService = new ExportacaoService();
+            exportacaoService = new LedExportacaoService();
             alarmeService = new AlarmeService();
             bancoHistorico = new BancoHistorico();
-            gridHistorico = new GridHistorico(dgvHistorico);
-            grafico = new GraficoSCADA(chart1);
+            gridHistorico = new LedGridHistorico(dgvHistorico);
+            grafico = new LedGrafico(chart1);
 
             gridHistorico.Configurar();
 
@@ -208,7 +210,7 @@ namespace projLeds1.Forms
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            exportacaoService.ExportarCSV(historicoService.GetTodos());
+            exportacaoService.ExportarCSV(SistemaGlobal.Historico.GetTodos());
         }
 
         //==================================================================
@@ -225,7 +227,7 @@ namespace projLeds1.Forms
             LEDs = ledService.GetAtivos()
         };
 
-            historicoService.Adicionar(registro);
+            SistemaGlobal.Historico.Adicionar(registro);
 
             gridHistorico.AdicionarRegistro(registro);
         }
@@ -236,7 +238,7 @@ namespace projLeds1.Forms
 
         private void btnSQLite_Click(object sender, EventArgs e)
         {
-            foreach (RegistroHistorico registro in historicoService.GetTodos())
+            foreach (RegistroHistorico registro in SistemaGlobal.Historico.GetTodos())
             {
                 string data =
                     registro.DataHora.ToString("dd/MM/yyyy");
@@ -265,11 +267,8 @@ namespace projLeds1.Forms
             }
 
             MessageBox.Show(
-                "Novos registros salvos!");
+                "Registros dos leds salvos!");
 
-            System.Diagnostics.Process.Start(
-                "explorer.exe",
-                Application.StartupPath);
         }
 
         //==================================================

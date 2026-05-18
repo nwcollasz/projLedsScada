@@ -2,15 +2,15 @@
 
 namespace projLeds1.Core
 {
-    internal class Leds
+    internal class NumeroLed
     {
         private byte dado;
-        public Leds()
+        public NumeroLed()
         {
             this.dado = 0;
         }
 
-        public Leds(byte dado)
+        public NumeroLed(byte dado)
         {
             this.dado = dado;
         }

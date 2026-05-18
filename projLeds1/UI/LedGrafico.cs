@@ -3,11 +3,11 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace projLeds1.UI
 {
-    public class GraficoSCADA
+    public class LedGrafico
     {
         private Chart chart;
 
-        public GraficoSCADA(Chart grafico)
+        public LedGrafico(Chart grafico)
         {
             chart = grafico;
 

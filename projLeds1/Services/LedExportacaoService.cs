@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+
 using projLeds1.Models;
 
 namespace projLeds1.Services
 {
-    public class ExportacaoService
+    public class LedExportacaoService
     {
         public void ExportarCSV(
             List<RegistroHistorico> registros)
@@ -28,14 +29,26 @@ namespace projLeds1.Services
                     new StreamWriter(salvar.FileName))
                 {
                     sw.WriteLine(
-                        "Hora;Temperatura;LEDs");
+                        "Hora;Equipamento;Temperatura;LEDs;RPM;Corrente;Evento");
 
                     foreach (RegistroHistorico registro in registros)
                     {
                         sw.WriteLine(
+
                             $"{registro.DataHora:HH:mm:ss};" +
+
+                            $"{registro.Equipamento};" +
+
                             $"{registro.Temperatura:F1};" +
-                            $"{registro.LEDs}");
+
+                            $"{registro.LEDs};" +
+
+                            $"{registro.RPM:F0};" +
+
+                            $"{registro.Corrente:F1};" +
+
+                            $"{registro.Evento}"
+                        );
                     }
                 }
 

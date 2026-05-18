@@ -4,44 +4,49 @@ using projLeds1.Models;
 
 namespace projLeds1.UI
 {
-    public class GridHistorico
+    public class LedGridHistorico
     {
         private DataGridView grid;
 
-        public GridHistorico(DataGridView dgv)
+        public LedGridHistorico(DataGridView dgv)
         {
             grid = dgv;
         }
 
         public void Configurar()
         {
-            grid.BackgroundColor = Color.FromArgb(255, 255, 192);
+            grid.RowHeadersVisible = false;
 
-            grid.ForeColor = Color.Black;
+            grid.AllowUserToResizeRows = false;
 
-            grid.GridColor = Color.Gray;
+            grid.BackgroundColor =
+                Color.Gainsboro;
 
-            grid.BorderStyle = BorderStyle.Fixed3D;
+            grid.GridColor =
+                Color.Black;
+
+            grid.BorderStyle =
+                BorderStyle.None;
 
             grid.EnableHeadersVisualStyles = false;
 
             grid.ColumnHeadersDefaultCellStyle.BackColor =
-                Color.FromArgb(255, 255, 192);
+                Color.FromArgb(40, 40, 40);
 
             grid.ColumnHeadersDefaultCellStyle.ForeColor =
-                Color.Black;
+                Color.LightSkyBlue;
 
             grid.DefaultCellStyle.BackColor =
-                Color.FromArgb(255, 255, 192);
+                Color.FromArgb(30, 30, 30);
 
             grid.DefaultCellStyle.ForeColor =
-                Color.Black;
+                Color.White;
 
             grid.DefaultCellStyle.SelectionBackColor =
-                Color.DarkRed;
+                Color.DarkCyan;
 
-            grid.DefaultCellStyle.SelectionForeColor =
-                Color.Black;
+            grid.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
 
             grid.RowHeadersVisible = false;
 

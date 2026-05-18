@@ -103,6 +103,46 @@ namespace projLeds1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap giroMotor2_off {
+            get {
+                object obj = ResourceManager.GetObject("giroMotor2_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_activity_history_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-activity-history-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_export_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-export-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_xls_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-xls-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lampadas_led {
             get {
                 object obj = ResourceManager.GetObject("lampadas_led", resourceCulture);
@@ -153,9 +193,39 @@ namespace projLeds1.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoSCADA {
+            get {
+                object obj = ResourceManager.GetObject("logoSCADA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lonepfp {
             get {
                 object obj = ResourceManager.GetObject("lonepfp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap motorGiro_gif {
+            get {
+                object obj = ResourceManager.GetObject("motorGiro.gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap motorGiro2 {
+            get {
+                object obj = ResourceManager.GetObject("motorGiro2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

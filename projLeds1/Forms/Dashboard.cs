@@ -1,5 +1,6 @@
 ﻿using projLeds1.Core;
 using projLeds1.Models;
+using projLeds1.Services;
 using System;
 using System.Windows.Forms;
 
@@ -9,6 +10,10 @@ namespace projLeds1.Forms
     {
         private Usuario usuario;
         private ControleLeds telaLED;
+        private MotorForm telaMotor;
+
+        private LedService ledService;
+        private MotorService motor;
 
         public Dashboard(Usuario u)
         {
@@ -28,11 +33,14 @@ namespace projLeds1.Forms
 
             lblFuncao.Text = $"Função: {usuario.Funcao}";
 
-            lblEntrada.Text = $"Entrada: {usuario.Entrada:dd/MM/yyyy HH:mm:ss}";
+            lblEntrada.Text = $"{usuario.Entrada:dd/MM/yyyy HH:mm:ss}";
 
             picturePerfil.Image = usuario.Foto;
 
             lblStatus.Text = "🟢 SISTEMA ONLINE";
+
+            motor = new MotorService();
+            ledService = new LedService();
 
             timerHora.Start();
 
@@ -48,12 +56,22 @@ namespace projLeds1.Forms
         {
             if (telaLED == null || telaLED.IsDisposed)
             {
-                telaLED = new ControleLeds(usuario, this);
+                telaLED = new ControleLeds(ledService, usuario, this);
             }
 
             telaLED.Show();
 
             telaLED.BringToFront();
+        }
+
+        private void BtnAbrirMotor_Click(object sender, EventArgs e)
+        {
+            if (telaMotor == null || telaMotor.IsDisposed)
+            {
+                telaMotor = new MotorForm(motor, usuario, this);
+            }
+            telaMotor.Show();
+            telaMotor.BringToFront();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -83,13 +101,26 @@ namespace projLeds1.Forms
         private void timerDashboard_Tick(object sender, EventArgs e)
         {
             lblTempLED.Text =
-                $"TEMP: {SistemaGlobal.TemperaturaLEDs:F1} °C";
+                $"TEMP: {ledService.Dados.Temperatura:F1} °C";
 
             lblAtivosLED.Text =
-                $"ATIVOS: {SistemaGlobal.LEDsAtivos}";
+                $"ATIVOS: {ledService.Dados.LEDsAtivos}";
 
             lblStatusLED.Text =
-                $"STATUS: {SistemaGlobal.StatusLEDs}";
+                $"STATUS: {ledService.Dados.Status}";
+
+          
+            lblStatusMotor.Text =
+                $"STATUS: {motor.Dados.Status}";
+
+            lblRPMMotor.Text =
+                $"RPM: {motor.Dados.RPM:F2}";
+
+            lblCorrenteMotor.Text =
+                $"CORRENTE: {motor.Dados.Corrente:F2} A";
+
+            lblTempMotor.Text =
+                $"TEMP: {motor.Dados.Temperatura:F1} °C";
         }
 
      
