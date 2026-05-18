@@ -1,22 +1,62 @@
-# 🏭 SCADA Simulator
+#🏭 Simulador SCADA
 
 Sistema supervisório industrial fictício desenvolvido em **C# + Windows Forms**.
 
-O projeto simula o monitoramento e controle de equipamentos industriais utilizando LEDs, temperatura, gráficos em tempo real, histórico de eventos e banco de dados SQLite.
+---
+
+O projeto simula:
+- 🔐 Sistema de login de operador
+- 📊 Dashboard dos equipamentos
+- 💡 Controle de LEDs
+- ⚡ Controle de motor elétrico
+- 🚨 Alarmes visuais
+- 🗃️ Histórico de eventos
+- 📁 Exportação CSV
+- 🛢️ Banco de dados SQLite
 
 ---
 
 # 🚀 Funcionalidades
 
-✅ Controle de LEDs  
-✅ Simulação de temperatura  
-✅ Gráfico em tempo real  
-✅ Histórico de registros  
-✅ Exportação CSV  
-✅ Banco de dados SQLite  
-✅ Sistema de alarmes  
-✅ Interface estilo SCADA  
-✅ Organização em camadas  
+## 🔐 Tela de Login
+
+- Login de operador
+- Registro de entrada no sistema
+- Exibição de foto do usuário
+- Informações do operador em tempo real
+
+---
+
+## 💡 Painel de LEDs
+
+- Acionamento individual dos LEDs
+- Botão shutdown
+- Conversão Binário / Decimal / Hexadecimal
+- Simulação de temperatura
+- Gráfico temperatura x led em tempo real
+- Histórico em DataGridView
+- Exportação CSV
+- Salvamento SQLite
+
+---
+
+## ⚡ Painel do Motor Elétrico
+
+- Controle de frequência
+- Simulação de corrente e temperatura
+- Histórico de eventos
+- ProgressBars em tempo real
+- Exportação CSV
+- Salvamento SQLite
+
+---
+
+## 🖥️ Dashboard
+
+- Supervisão geral do sistema
+- Dados em tempo real
+- Perfil do operador
+- Navegação entre telas
 
 ---
 
