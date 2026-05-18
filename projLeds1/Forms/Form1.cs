@@ -181,9 +181,9 @@ namespace projLeds1.Forms
             }
         }
 
-        //======================
-        // TIMER (HORA E FADEIN)
-        //======================
+        //======
+        // TIMER 
+        //======
 
         private void timer1_Tick(object sender, EventArgs e)
         {
