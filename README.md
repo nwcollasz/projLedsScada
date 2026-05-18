@@ -27,7 +27,7 @@ O projeto simula:
 
 ---
 
-## 💡 Painel de LEDs
+## 💡 Painel LEDs
 
 - Acionamento individual dos LEDs
 - Botão shutdown
@@ -40,7 +40,7 @@ O projeto simula:
 
 ---
 
-## ⚡ Painel do Motor Elétrico
+## ⚡ Painel Motor Elétrico
 
 - Controle de frequência
 - Simulação de corrente e temperatura
